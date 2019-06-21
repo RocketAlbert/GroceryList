@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="daA-N6-bPW">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping List Table View Controller-->
+        <scene sceneID="oEc-Ib-hkC">
+            <objects>
+                <tableViewController id="3tX-57-Ly5" customClass="ShoppingListTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j17-Q5-C3V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groceryItemCell" rowHeight="50" id="2BN-X9-5uk" customClass="GroceryItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2BN-X9-5uk" id="1Mj-SY-dII">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE3-gI-1Y5">
+                                            <rect key="frame" x="28" y="14.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vj-ae-Huy">
+                                            <rect key="frame" x="370" y="8" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="bdi-az-Ues"/>
+                                                <constraint firstAttribute="width" secondItem="5Vj-ae-Huy" secondAttribute="height" multiplier="1:1" id="uA3-uv-9wM"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="incomplete"/>
+                                            <connections>
+                                                <action selector="completeButtonToggled:" destination="2BN-X9-5uk" eventType="touchUpInside" id="Rky-SC-XEw"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5Vj-ae-Huy" firstAttribute="top" secondItem="1Mj-SY-dII" secondAttribute="top" constant="8" id="YWe-n4-jjS"/>
+                                        <constraint firstItem="BE3-gI-1Y5" firstAttribute="centerY" secondItem="1Mj-SY-dII" secondAttribute="centerY" id="b9W-Qs-oOW"/>
+                                        <constraint firstItem="BE3-gI-1Y5" firstAttribute="leading" secondItem="1Mj-SY-dII" secondAttribute="leadingMargin" constant="8" id="jTL-nr-RH0"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Vj-ae-Huy" secondAttribute="trailing" constant="8" id="xs1-UP-PZP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completeButton" destination="5Vj-ae-Huy" id="7B1-4U-gl0"/>
+                                    <outlet property="groceryItemLabel" destination="BE3-gI-1Y5" id="cpF-5K-DuS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3tX-57-Ly5" id="7BG-wg-Xub"/>
+                            <outlet property="delegate" destination="3tX-57-Ly5" id="zME-Pi-2mM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NqU-IB-RnH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dYQ-UV-u4x">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="3tX-57-Ly5" id="H6X-86-Auq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Av-Ge-Vr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833.33333333333337" y="725.89285714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="izs-bZ-CPz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="daA-N6-bPW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="25w-1c-aQY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3tX-57-Ly5" kind="relationship" relationship="rootViewController" id="rge-ZY-8aY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBc-lO-MOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="725.89285714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="incomplete" width="512" height="512"/>
+    </resources>
+</document>
