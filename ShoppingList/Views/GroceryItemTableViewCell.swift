@@ -30,6 +30,7 @@ class GroceryItemTableViewCell: UITableViewCell {
     }
 }
 
+
 extension GroceryItemTableViewCell {
     func update(withGroceryItem groceryItem: GroceryItem) {
         groceryItemLabel.text = groceryItem.name
